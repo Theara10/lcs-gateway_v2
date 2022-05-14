@@ -1,0 +1,67 @@
+{
+  "main_list": [
+    {
+      "disp_name": "Admin Content Server",
+      "card_link": "http://admin.koompi.app",
+      "img_src": "/images/icons/admin.png",
+      "url_type": "true"
+    },
+    {
+      "disp_name": "Home",
+      "svg": true,
+      "img_src": "/images/icons/home.png"
+    },
+    {
+      "disp_name": "STEM",
+      "svg": false,
+      "img_src": "/images/stem-logo.webp"
+    },
+    {
+      "disp_name": "Health",
+      "svg": true,
+      "img_src": "/images/icons/health.png"
+    },
+    {
+      "disp_name": "Law",
+      "svg": true,
+      "img_src": "/images/icons/law.png"
+    },
+    {
+      "disp_name": "Art",
+      "svg": true,
+      "img_src": "/images/icons/art.png"
+    },
+    {
+      "disp_name": "General Education",
+      "svg": true,
+      "img_src": "/images/icons/education.png"
+    },
+    {
+      "disp_name": "Information and Communication Technology",
+      "svg": false,
+      "img_src": "/images/icons/it.webp"
+    }
+  ],
+  "secondary_list": [
+    {
+      "disp_name": "Science",
+      "svg": false,
+      "img_src": "/images/stem-logo.webp"
+    },
+    {
+      "disp_name": "Technology",
+      "svg": false,
+      "img_src": "/images/stem-logo.webp"
+    },
+    {
+      "disp_name": "Engineering",
+      "svg": false,
+      "img_src": "/images/stem-logo.webp"
+    },
+    {
+      "disp_name": "Mathematic",
+      "svg": false,
+      "img_src": "/images/stem-logo.webp"
+    }
+  ]
+}

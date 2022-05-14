@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Layout, Menu, Breadcrumb, Card, Avatar, Row, Col } from "antd";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SubCard from "./pages/SubCard";
+import Home from "./pages/Home";
+import CategoryView from "./pages/CategoryView";
+
+import { ThemeContext } from "./contexts/ThemeContext";
+import { useState } from "react";
+import { SidebarContext } from "./contexts/SidebarContext";
 
 function App() {
+  const [collapsed, setCollapsed] = useState(false);
+  const [toggled, setToggled] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={{ collapsed, setCollapsed }}>
+      <SidebarContext.Provider value={{ toggled, setToggled }}>
+        <BrowserRouter>
+          <Navbar />
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <Sidebar />
+            <div className="site-layout">
+              <Routes>
+                <Route path="/" element={<Home />} exact />
+                <Route path="/resource/:id" element={<SubCard />} />
+                <Route
+                  path="/resource/category/:category_name"
+                  element={<CategoryView />}
+                />
+              </Routes>
+            </div>
+          </div>
+        </BrowserRouter>
+      </SidebarContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 
