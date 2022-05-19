@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Breadcrumb, Card, Row, Col } from "antd";
 import main_cards from "../data/main_cards.json";
 
@@ -7,10 +7,27 @@ const { Meta } = Card;
 
 function SubCard() {
   const param = useParams();
+  const navigate = useNavigate();
 
   return (
     <div className="home-page">
-      <Breadcrumb style={{ margin: "16px 0" }}>
+      <div className="breadcrumb">
+        <img
+          onClick={() => navigate(-1)}
+          src={require("../assets/icons/back.png")}
+          height="12"
+          width="auto"
+        />
+
+        <p>
+          {main_cards
+            .filter((x) => x.id === param.id)
+            .map((x) => (
+              <span>{x.card_title}</span>
+            ))}
+        </p>
+      </div>
+      {/* <Breadcrumb style={{ margin: "16px 0" }}>
         <Breadcrumb.Item>
           <Link to="/">Home</Link>
         </Breadcrumb.Item>
@@ -23,7 +40,7 @@ function SubCard() {
               ))}
           </Link>
         </Breadcrumb.Item>
-      </Breadcrumb>
+      </Breadcrumb> */}
 
       {main_cards
         .filter((x) => x.id === param.id)

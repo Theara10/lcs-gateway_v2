@@ -21,35 +21,29 @@ function Sidebar() {
           return {
             key: x.id,
             label: x.disp_name,
-            icon: !x.card_link ? (
+            icon: !x.link ? (
               <div>
                 <Link
+                  to={`/resource/category/${x.disp_name}`}
                   onClick={() => {
                     localStorage.setItem("category", x.disp_name);
                   }}
-                  to={`/resource/category/${x.disp_name}`}
                 >
                   <img src={x.img_src} width="20" height="20" />
                 </Link>
               </div>
             ) : (
               <div>
-                <a
-                  onClick={() => {
-                    localStorage.setItem("category", x.disp_name);
-                  }}
-                  href={x.card_link}
-                  target="_blank"
-                >
+                <Link to={x.link}>
                   <img src={x.img_src} width="20" height="20" />
-                </a>
+                </Link>
               </div>
             ),
           };
         })}
       />
 
-      <div className="spacing"></div>
+      {/* <div className="spacing"></div>
       <Menu
         theme="dark"
         mode="inline"
@@ -60,7 +54,7 @@ function Sidebar() {
             icon: <img src={x.img_src} width="20" height="20" />,
           };
         })}
-      />
+      /> */}
     </Sider>
   );
 }

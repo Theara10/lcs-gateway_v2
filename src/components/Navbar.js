@@ -23,7 +23,11 @@ function Navbar() {
             onClick={() => onCollapse()}
             src={require("../assets/icons/menu.png")}
             height={20}
-            style={{ marginLeft: 10, marginRight: 20, cursor: "pointer" }}
+            style={{
+              marginLeft: 10,
+              marginRight: 20,
+              cursor: "pointer",
+            }}
           />
           <img
             className="mobile-menu"
@@ -33,31 +37,36 @@ function Navbar() {
             style={{ marginLeft: 10, marginRight: 20, cursor: "pointer" }}
           />
           <a href="/">
-            <img src={require("../assets/Koompi-Black.png")} height={30} />
+            <img
+              src={require("../assets/Koompi-Black.png")}
+              height={40}
+              className="logo-img"
+            />
           </a>
-        </div>
-        <div className="navbar-right">
           <div className="search">
             <input placeholder="Search" />
-            <img
-              src={require("../assets/icons/search.png")}
-              width={18}
-              height={18}
-              alt="search-icon"
-            />
+            <div>
+              <img
+                src={require("../assets/icons/search.png")}
+                width={18}
+                height={18}
+                alt="search-icon"
+              />
+            </div>
           </div>
         </div>
-        {/* <div className="navbar-right">
-          <div className="search-box">
-            <input placeholder="Search" />
-            <img
-              src={require("../assets/icons/search.png")}
-              width={18}
-              height={18}
-              alt="search-icon"
-            />
-          </div>
-        </div> */}
+        <div className="navbar-right">
+          <a href="http://admin.koompi.app" target="_blank">
+            <div className="navbar-right-icon">
+              <img
+                className="admin-icon"
+                src={require("../assets/icons/admin.png")}
+                height={20}
+              />
+              <p>Admin</p>
+            </div>
+          </a>
+        </div>
       </div>
       <SideHeader />
     </div>

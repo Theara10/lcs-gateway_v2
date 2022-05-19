@@ -55,25 +55,26 @@ function SideHeader() {
                 items={data.main_list.map((x) => {
                   return {
                     key: x.id,
-                    label: <p>{x.disp_name}</p>,
+                    label: x.disp_name,
                     icon: (
-                      <a
+                      <Link
                         onClick={() => {
                           localStorage.setItem("category", x.disp_name);
+                          onClose();
                         }}
-                        href={
+                        to={
                           !x.card_link
                             ? `/resource/category/${x.disp_name}`
                             : x.card_link
                         }
                       >
                         <img src={x.img_src} width="20" height="20" />
-                      </a>
+                      </Link>
                     ),
                   };
                 })}
               />
-              <div className="spacing"></div>
+              {/* <div className="spacing"></div>
               <Menu
                 theme="dark"
                 mode="inline"
@@ -84,7 +85,7 @@ function SideHeader() {
                     icon: <img src={x.img_src} width="20" height="20" />,
                   };
                 })}
-              />
+              /> */}
             </Col>
           </Row>
         </Drawer>
