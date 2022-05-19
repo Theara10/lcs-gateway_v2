@@ -23,23 +23,23 @@ function CategoryView() {
             width="auto"
           />
         </Link>
-        <p>{category}</p>
+        {/* <p>{category}</p> */}
+        <Breadcrumb
+          style={{
+            marginLeft: "16px",
+          }}
+        >
+          <Breadcrumb.Item>
+            <Link to="/">Home</Link>
+          </Breadcrumb.Item>
+
+          <Breadcrumb.Item>
+            <Link to="/">{category}</Link>
+          </Breadcrumb.Item>
+        </Breadcrumb>
       </div>
-      {/* <Breadcrumb
-        style={{
-          margin: "16px 0",
-        }}
-      >
-        <Breadcrumb.Item>
-          <Link to="/">Home</Link>
-        </Breadcrumb.Item>
 
-        <Breadcrumb.Item>
-          <Link to="/">{category}</Link>
-        </Breadcrumb.Item>
-      </Breadcrumb> */}
-
-      <Row gutter={[16, 16]}>
+      <Row gutter={[24, 24]}>
         {main_cards
           .filter((x) => {
             for (let i = 0; i < x.card_categories.length; i++) {

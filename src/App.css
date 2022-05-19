@@ -106,8 +106,7 @@ color: white;
   outline: none;
   /* padding: 8px 10px !important; */
 }
-
-
+  
 /* ------sidebar------- */
 .ant-layout-sider.ant-layout-sider-dark.sidebar  {
   min-width: 250px !important;
@@ -209,6 +208,7 @@ color: white;
 .site-layout {
   background-color: #eee !important;
   width: 100%;
+  padding: 20px!important;
 }
 .ant-layout {
   background-color: #eee !important;
@@ -235,22 +235,21 @@ color: white;
 .ant-card-meta-title {
   margin: 0px !important;
 }
-.ant-card-cover{
-  object-fit: cover !important;
-}
+
 .ant-card-cover img {
  height: 180px !important;
  padding: 10px;
+ object-fit: cover;
  border-radius: 20px !important;
 }
-/* .ant-card-meta-description {
-  color: var(--secondary-color) !important;
-} */
+
 
 .breadcrumb {
   display: flex;
   align-items: center;
-  margin: 16px 0;
+  /* margin: 16px 0; */
+  padding: 0px !important;
+  margin-bottom: 16px !important;
 
 }
 .breadcrumb img {
@@ -275,7 +274,29 @@ color: white;
 }
 
 @media screen and (max-width: 768px) {
-  
+  .desktop-menu {
+    display: none !important;
+  }
+  .mobile-menu {
+    display: block !important;
+    margin: 10px !important;
+  }
+  .ant-layout-sider.ant-layout-sider-dark.sidebar  {
+    display: none;
+   } 
+   .ant-layout-sider.ant-layout-sider-dark.ant-layout-sider-collapsed.sidebar {
+     display: none;
+   }
+   .ant-drawer-body {
+     padding: 10px 0 !important;
+     display: block !important;
+   }
+   .ant-drawer-content-wrapper {
+     display: block !important;
+   }
+   .ant-drawer-mask {
+     display: block !important;
+   }
 }
 
 @media screen and (max-width: 576px) {

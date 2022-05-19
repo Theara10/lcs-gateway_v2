@@ -19,34 +19,34 @@ function SubCard() {
           width="auto"
         />
 
-        <p>
+        {/* <p>
           {main_cards
             .filter((x) => x.id === param.id)
             .map((x) => (
               <span>{x.card_title}</span>
             ))}
-        </p>
+        </p> */}
+        <Breadcrumb style={{ marginLeft: "16px" }}>
+          <Breadcrumb.Item>
+            <Link to="/">Home</Link>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <Link to="/">
+              {main_cards
+                .filter((x) => x.id === param.id)
+                .map((x) => (
+                  <span>{x.card_title}</span>
+                ))}
+            </Link>
+          </Breadcrumb.Item>
+        </Breadcrumb>
       </div>
-      {/* <Breadcrumb style={{ margin: "16px 0" }}>
-        <Breadcrumb.Item>
-          <Link to="/">Home</Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item>
-          <Link to="/">
-            {main_cards
-              .filter((x) => x.id === param.id)
-              .map((x) => (
-                <span>{x.card_title}</span>
-              ))}
-          </Link>
-        </Breadcrumb.Item>
-      </Breadcrumb> */}
 
       {main_cards
         .filter((x) => x.id === param.id)
         .map((x) => {
           return (
-            <Row gutter={[16, 16]}>
+            <Row gutter={[24, 24]}>
               {x.sub_cards.map((data) => {
                 console.log("hi", data);
                 return (
