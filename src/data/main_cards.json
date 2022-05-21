@@ -358,6 +358,38 @@
       "General Education",
       "Science",
       "Mathematic"
+    ],
+    "sub_cards": [
+      {
+        "card_title": "Primary Mathematics in English",
+        "card_subtitle": "Teacher Guide",
+        "card_link": "http://rachel.koompi.app/modules/iicba/PRIMARY_MATHS_SERIES/MATH_PAGES/index_pages/math_home.htm",
+        "card_thumbnail": "images/main/UNESCO-IICBA.webp"
+      },
+      {
+        "card_title": "Primary Science in English",
+        "card_subtitle": "Teacher Guide",
+        "card_link": "http://rachel.koompi.app/modules/iicba/PRIMARY_SCIENCE_SERIES/SCIENCE_PAGES/index_pages/science_home.htm",
+        "card_thumbnail": "images/main/UNESCO-IICBA.webp"
+      },
+      {
+        "card_title": "Secondary Science in English",
+        "card_subtitle": "Teacher Guide",
+        "card_link": "http://rachel.koompi.app/modules/iicba/SECONDARY_SCIENCE_SERIES/index_pages/science_home.htm",
+        "card_thumbnail": "images/main/UNESCO-IICBA.webp"
+      },
+      {
+        "card_title": "School Management in English",
+        "card_subtitle": "Teacher Guide",
+        "card_link": "http://rachel.koompi.app/modules/iicba/Better_Schools/index.html",
+        "card_thumbnail": "images/main/UNESCO-IICBA.webp"
+      },
+      {
+        "card_title": "HIV/AIDS Electronic Library",
+        "card_subtitle": "Teacher Resouce",
+        "card_link": "http://rachel.koompi.app/modules/iicba/Better_Schools/index.html",
+        "card_thumbnail": "images/main/UNESCO-IICBA.webp"
+      }
     ]
   },
   {
@@ -644,7 +676,7 @@
     "card_title": "W3school",
     "card_subtitle": "Programming",
     "card_link": "http://w3.koompi.app",
-    "card_thumbnail": "images/main/w3.webp",
+    "card_thumbnail": "images/main/w3school.png",
     "card_categories": [
       "Home",
       "STEM",
