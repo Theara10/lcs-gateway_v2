@@ -3,7 +3,7 @@
     "id": "1",
     "card_title": "Sala KOOMPI",
     "card_subtitle": "KOOMPI",
-    "card_link": "https://sala.koompi.com",
+    "card_link": "https://saladigital.org",
     "card_thumbnail": "images/main/sala-logo.webp",
     "card_categories": [
       "Home",
@@ -616,7 +616,7 @@
     "id": "17",
     "card_title": "Scratch",
     "card_subtitle": "MIT",
-    "card_link": "index.html",
+    "card_link": "https://rachel.koompi.app/modules/scratch/index.html",
     "card_thumbnail": "images/main/scratchlogo.webp",
     "card_categories": [
       "Home",
