@@ -1,29 +1,14 @@
-import React, { useState, useContext } from "react";
-import { Layout, Drawer, Row, Col, Menu } from "antd";
-import menuWhite from "../assets/icons/menu.png";
-import logo from "../assets/Koompi-Black.png";
-import data from "../data/sidebar.json";
-import { ThemeContext } from "../contexts/ThemeContext";
+import React, { useContext } from 'react';
+import { Drawer, Row, Col, Menu } from 'antd';
+import logo from '../assets/Koompi-Black.png';
+import data from '../data/sidebar.json';
 
-import { Link } from "react-router-dom";
-import { SidebarContext } from "../contexts/SidebarContext";
-
-const routes = [
-  { name: "Explore", route: "/" },
-  { name: "Blocks", route: "/blocks" },
-  { name: "Account", route: "/accounts" },
-  { name: "Transfers", route: "/transfers" },
-  { name: "Extrinsics", route: "/extrinsics" },
-  { name: "Events", route: "/events" },
-];
+import { Link } from 'react-router-dom';
+import { SidebarContext } from '../contexts/SidebarContext';
 
 function SideHeader() {
-  //   const [visible, setVisible] = useState(false);
   const { toggled, setToggled } = useContext(SidebarContext);
 
-  const showDrawer = () => {
-    setToggled(true);
-  };
   const onClose = () => {
     setToggled(false);
   };
@@ -37,12 +22,12 @@ function SideHeader() {
           onClose={onClose}
           visible={toggled}
           bodyStyle={{
-            background: "white",
+            background: 'white',
           }}
         >
-          <div style={{ padding: "20px" }}>
-            <img src={logo} alt="koompi-logo" width="80%" />
-          </div>
+          <center>
+            <img src={logo} alt="koompi-logo" className="koompi-logo" />
+          </center>
           <Row
             className="header-container"
             justify="space-between"
@@ -59,7 +44,7 @@ function SideHeader() {
                     icon: (
                       <Link
                         onClick={() => {
-                          localStorage.setItem("category", x.disp_name);
+                          localStorage.setItem('category', x.disp_name);
                           onClose();
                         }}
                         to={
@@ -68,24 +53,17 @@ function SideHeader() {
                             : x.card_link
                         }
                       >
-                        <img src={x.img_src} width="20" height="20" />
+                        <img
+                          src={x.img_src}
+                          alt="koompi-img"
+                          width="20"
+                          height="20"
+                        />
                       </Link>
                     ),
                   };
                 })}
               />
-              {/* <div className="spacing"></div>
-              <Menu
-                theme="dark"
-                mode="inline"
-                items={data.secondary_list.map((x) => {
-                  return {
-                    key: x.id,
-                    label: x.disp_name,
-                    icon: <img src={x.img_src} width="20" height="20" />,
-                  };
-                })}
-              /> */}
             </Col>
           </Row>
         </Drawer>

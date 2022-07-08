@@ -1,7 +1,7 @@
-import React from "react";
-import { Layout, Card, Row, Col } from "antd";
-import main_cards from "../data/main_cards.json";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Layout, Card, Row, Col } from 'antd';
+import main_cards from '../data/main_cards.json';
+import { Link } from 'react-router-dom';
 
 const { Meta } = Card;
 const { Content } = Layout;
@@ -9,9 +9,6 @@ const { Content } = Layout;
 function Home() {
   return (
     <Content className="home-page">
-      {/* <div className="breadcrumb">
-        <p>Home</p>
-      </div> */}
       <Row gutter={[24, 24]}>
         {main_cards.map((x) => (
           <Col xs={24} sm={24} md={12} lg={8} xl={6} key={x.id}>
@@ -30,7 +27,7 @@ function Home() {
                 </Card>
               </Link>
             ) : (
-              <a href={x.card_link} target="_blank">
+              <a href={x.card_link} target="_blank" rel="noopener noreferrer">
                 <Card
                   cover={
                     <img
@@ -44,19 +41,6 @@ function Home() {
                 </Card>
               </a>
             )}
-            {/* <a href={x.sub_cards ? `/resource/${x.id}` : x.card_link}>
-              <Card
-                cover={
-                  <img
-                    className="card-img"
-                    alt="example"
-                    src={x.card_thumbnail}
-                  />
-                }
-              >
-                <Meta title={x.card_title} description={x.card_subtitle} />
-              </Card>
-            </a> */}
           </Col>
         ))}
       </Row>

@@ -1,13 +1,13 @@
-import React, { useEffect, useReducer } from "react";
-import { Breadcrumb, Card, Row, Col } from "antd";
-import main_cards from "../data/main_cards.json";
-import { Link } from "react-router-dom";
+import React, { useEffect, useReducer } from 'react';
+import { Breadcrumb, Card, Row, Col } from 'antd';
+import main_cards from '../data/main_cards.json';
+import { Link } from 'react-router-dom';
 
 const { Meta } = Card;
 
 function CategoryView() {
-  const category = localStorage.getItem("category");
-  const [any, forceUpdate] = useReducer((num) => num + 1, 0);
+  const category = localStorage.getItem('category');
+  const [, forceUpdate] = useReducer((num) => num + 1, 0);
 
   useEffect(() => {
     forceUpdate();
@@ -18,7 +18,8 @@ function CategoryView() {
       <div className="breadcrumb">
         <Link to="/">
           <img
-            src={require("../assets/icons/back.png")}
+            src={require('../assets/icons/back.png')}
+            alt="img"
             height="12"
             width="auto"
           />
@@ -26,7 +27,7 @@ function CategoryView() {
         {/* <p>{category}</p> */}
         <Breadcrumb
           style={{
-            marginLeft: "16px",
+            marginLeft: '16px',
           }}
         >
           <Breadcrumb.Item>
@@ -48,6 +49,7 @@ function CategoryView() {
                 return x.card_categories[i];
               }
             }
+            return null;
           })
           .map((x) => (
             <Col xs={24} sm={24} md={12} lg={8} xl={6} key={x.id}>
@@ -69,6 +71,7 @@ function CategoryView() {
                 <a
                   href={x.sub_cards ? `/resource/${x.id}` : x.card_link}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Card
                     cover={
