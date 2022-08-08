@@ -1,10 +1,21 @@
-import React, { useContext } from 'react';
-import { Drawer, Row, Col, Menu } from 'antd';
-import logo from '../assets/Koompi-Black.png';
-import data from '../data/sidebar.json';
+/* eslint-disable */
+import React, { useState, useContext } from "react";
+import { Layout, Drawer, Row, Col, Menu } from "antd";
+/* eslint-disable */
+import logo from "../assets/Koompi-Black.png";
+import data from "../data/sidebar.json";
 
-import { Link } from 'react-router-dom';
-import { SidebarContext } from '../contexts/SidebarContext';
+import { Link } from "react-router-dom";
+import { SidebarContext } from "../contexts/SidebarContext";
+
+const routes = [
+  { name: "Explore", route: "/" },
+  { name: "Blocks", route: "/blocks" },
+  { name: "Account", route: "/accounts" },
+  { name: "Transfers", route: "/transfers" },
+  { name: "Extrinsics", route: "/extrinsics" },
+  { name: "Events", route: "/events" },
+];
 
 function SideHeader() {
   const { toggled, setToggled } = useContext(SidebarContext);
@@ -22,12 +33,12 @@ function SideHeader() {
           onClose={onClose}
           visible={toggled}
           bodyStyle={{
-            background: 'white',
+            background: "white",
           }}
         >
-          <center>
-            <img src={logo} alt="koompi-logo" className="koompi-logo" />
-          </center>
+          <div style={{ padding: "20px" }}>
+            <img src={logo} alt="koompi-logo" width="80%" />
+          </div>
           <Row
             className="header-container"
             justify="space-between"
@@ -44,7 +55,7 @@ function SideHeader() {
                     icon: (
                       <Link
                         onClick={() => {
-                          localStorage.setItem('category', x.disp_name);
+                          localStorage.setItem("category", x.disp_name);
                           onClose();
                         }}
                         to={
@@ -53,12 +64,7 @@ function SideHeader() {
                             : x.card_link
                         }
                       >
-                        <img
-                          src={x.img_src}
-                          alt="koompi-img"
-                          width="20"
-                          height="20"
-                        />
+                        <img alt="" src={x.img_src} width="20" height="20" />
                       </Link>
                     ),
                   };

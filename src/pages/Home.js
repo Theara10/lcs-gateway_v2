@@ -1,7 +1,7 @@
-import React from 'react';
-import { Layout, Card, Row, Col } from 'antd';
-import main_cards from '../data/main_cards.json';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Layout, Card, Row, Col } from "antd";
+import main_cards from "../data/main_cards.json";
+import { Link } from "react-router-dom";
 
 const { Meta } = Card;
 const { Content } = Layout;
@@ -27,7 +27,7 @@ function Home() {
                 </Card>
               </Link>
             ) : (
-              <a href={x.card_link} target="_blank" rel="noopener noreferrer">
+              <a href={x.card_link} target="_blank" rel="noreferrer">
                 <Card
                   cover={
                     <img

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
-import { Breadcrumb, Card, Row, Col } from 'antd';
-import main_cards from '../data/main_cards.json';
+import React from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { Breadcrumb, Card, Row, Col } from "antd";
+import main_cards from "../data/main_cards.json";
 
 const { Meta } = Card;
 
@@ -12,15 +12,13 @@ function SubCard() {
   return (
     <div className="home-page">
       <div className="breadcrumb">
-        <img
+        <img alt=""
           onClick={() => navigate(-1)}
-          src={require('../assets/icons/back.png')}
+          src={require("../assets/icons/back.png")}
           height="12"
           width="auto"
-          alt="koompi-img"
         />
-
-        <Breadcrumb style={{ marginLeft: '16px' }}>
+        <Breadcrumb style={{ marginLeft: "16px" }}>
           <Breadcrumb.Item>
             <Link to="/">Home</Link>
           </Breadcrumb.Item>
@@ -42,14 +40,9 @@ function SubCard() {
           return (
             <Row gutter={[24, 24]}>
               {x.sub_cards.map((data) => {
-                console.log('hi', data);
                 return (
                   <Col xs={24} sm={24} md={12} lg={8} xl={6}>
-                    <a
-                      href={data.card_link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href={data.card_link} target="_blank" rel="noreferrer">
                       <Card
                         cover={
                           <img

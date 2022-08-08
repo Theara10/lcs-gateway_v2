@@ -1,8 +1,10 @@
-import React, { useContext } from 'react';
-import data from '../data/sidebar.json';
-import { Layout, Menu } from 'antd';
-import { Link } from 'react-router-dom';
-import { ThemeContext } from '../contexts/ThemeContext';
+/* eslint-disable */
+import React, { useState, useContext } from "react";
+/* eslint-disable */
+import data from "../data/sidebar.json";
+import { Layout, Menu } from "antd";
+import { Link } from "react-router-dom";
+import { ThemeContext } from "../contexts/ThemeContext";
 const { Sider } = Layout;
 
 function Sidebar() {
@@ -26,26 +28,16 @@ function Sidebar() {
                 <Link
                   to={`/resource/category/${x.disp_name}`}
                   onClick={() => {
-                    localStorage.setItem('category', x.disp_name);
+                    localStorage.setItem("category", x.disp_name);
                   }}
                 >
-                  <img
-                    src={x.img_src}
-                    width="20"
-                    height="20"
-                    alt="koompi-img"
-                  />
+                  <img alt="" src={x.img_src} width="20" height="20" />
                 </Link>
               </div>
             ) : (
               <div>
                 <Link to={x.link}>
-                  <img
-                    src={x.img_src}
-                    width="20"
-                    height="20"
-                    alt="koompi-img"
-                  />
+                  <img alt="" src={x.img_src} width="20" height="20" />
                 </Link>
               </div>
             ),
