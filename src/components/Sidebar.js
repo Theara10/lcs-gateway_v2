@@ -31,8 +31,8 @@ function Sidebar() {
                 >
                   <img
                     src={x.img_src}
-                    width="20"
-                    height="20"
+                    width="30"
+                    height="30"
                     alt="koompi-img"
                   />
                 </Link>
@@ -42,8 +42,8 @@ function Sidebar() {
                 <Link to={x.link}>
                   <img
                     src={x.img_src}
-                    width="20"
-                    height="20"
+                    width="30"
+                    height="30"
                     alt="koompi-img"
                   />
                 </Link>
